@@ -122,11 +122,6 @@ def read_xlsx_as_df(b64_data: str) -> DataFrame:
         L.info("Looks like that's not a valid attachment!")
 
 
-def log_file(date_string: str, query: str):
-    with open("journal.log", "w") as f:
-        f.write(f"{date_string} - used with query q={query}")
-
-
 def attachments_as_df(service: discovery.Resource,
                       attachment_data: Dict[str, List[str]]) -> Tuple[List[DataFrame], bool]:
     """
